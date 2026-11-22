@@ -6,5 +6,6 @@ bin/
 .wbapp_*.genie
 scratch/
 .gh-token
+askpass.sh
 *.log
 .DS_Store

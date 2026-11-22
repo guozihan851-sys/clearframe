@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="粘贴抖音、快手、小红书的分享链接，提取无水印原视频与图文。" />
+  <title>净影 ClearFrame · 短视频去水印</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="/" aria-label="净影首页">
+      <span class="brand-mark">净</span>
+      <span class="brand-name">净影<em>CLEARFRAME</em></span>
+    </a>
+    <div class="nav-note"><span class="live-dot"></span>在线运行 · 不上传内容</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow"><span>短视频去水印工具</span></p>
+      <h1>把水印，<br /><span class="accent">留在链接里。</span></h1>
+      <p class="lede">
+        粘贴抖音、快手、小红书的分享链接，解析出无水印原片。
+        视频与图文都支持，原画质直接下载。
+      </p>
+
+      <form class="input-card" id="parse-form" autocomplete="off">
+        <div class="field-head">
+          <label for="share-input">分享链接 / 分享口令</label>
+          <span class="field-hint"><kbd>Ctrl</kbd><span>+</span><kbd>Enter</kbd></span>
+        </div>
+        <textarea
+          id="share-input"
+          name="share"
+          rows="3"
+          spellcheck="false"
+          placeholder="粘贴到这里，例如：复制打开抖音，看看【某某】的作品 https://v.douyin.com/xxxxxx/"
+        ></textarea>
+        <div class="input-foot">
+          <div class="platforms" aria-label="支持的平台">
+            <span class="platform"><i class="dot douyin"></i>抖音</span>
+            <span class="platform"><i class="dot kuaishou"></i>快手</span>
+            <span class="platform"><i class="dot xhs"></i>小红书</span>
+            <span class="platform muted">持续增加中</span>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn ghost" id="paste-btn">粘贴</button>
+            <button type="submit" class="btn primary" id="parse-btn">
+              <span class="btn-label">提取原片</span>
+              <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+                <path d="M4 10h11M10.5 4.5 16 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div class="alert" id="error" role="alert" hidden></div>
+    </section>
+
+    <section class="result" id="result" aria-live="polite" hidden></section>
+
+    <section class="strip" aria-label="工具特性">
+      <article>
+        <span class="strip-index">01</span>
+        <h3>原画质直取</h3>
+        <p>直接读取平台源文件地址，不做二次转码压缩，画面与音质保持原样。</p>
+      </article>
+      <article>
+        <span class="strip-index">02</span>
+        <h3>视频 + 图文</h3>
+        <p>短视频、图集笔记都能解析。图集可逐张下载，保存原始尺寸。</p>
+      </article>
+      <article>
+        <span class="strip-index">03</span>
+        <h3>什么都不留</h3>
+        <p>本站不落地存储视频。解析出的媒体链接 30 分钟后自动失效。</p>
+      </article>
+    </section>
+
+    <section class="how">
+      <div class="how-head">
+        <p class="eyebrow"><span>使用方法</span></p>
+        <h2>三步，拿回原片。</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="step-num">1</span>
+          <div><h3>复制分享链接</h3><p>在短视频 App 里点「分享 → 复制链接」。</p></div>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <div><h3>粘贴并解析</h3><p>整段分享口令贴进来就行，链接会自动识别。</p></div>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <div><h3>预览并下载</h3><p>确认画面无误后，一键保存无水印文件。</p></div>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">净影 <span>CLEARFRAME</span></div>
+    <p>仅用于个人学习、研究与已获授权的素材整理。所有内容版权归原作者所有，请勿用于侵权用途。</p>
+    <p class="footer-tech">Node.js · 零依赖 · 云端即时解析</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

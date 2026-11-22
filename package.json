@@ -1,0 +1,13 @@
+{
+  "name": "clearframe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "短视频分享链接去水印提取工具",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

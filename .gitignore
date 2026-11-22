@@ -1,0 +1,10 @@
+node_modules/
+vendor/
+bin/
+.claude/
+.workbuddy/
+.wbapp_*.genie
+scratch/
+.gh-token
+*.log
+.DS_Store
